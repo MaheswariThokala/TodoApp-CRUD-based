@@ -28,7 +28,7 @@ app.set("views",'front');
 app.use(express.json());
 app.use(bodyparser.urlencoded({ extended: true}));
 app.use(methodOverride('_method'));
-//app.use(express.json());
+
 
 
   
@@ -54,7 +54,7 @@ app.get('/edit-todo/:id', async (req, res) => {
         }
 
         // Render your view or send the task data in the response
-        res.render('edit-todo', { task: task }); // Pass task, not tasks
+        res.render('edit-todo', { task: task }); 
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');
@@ -77,18 +77,7 @@ app.post("/", async(req, res)=>{
         res.redirect("/")
     }
     
-});
-//app.put('/edit-todo/:id',async (req,res)=>{
-  //  try {
-    //    const updatedTask = await Task.findById(req.params.id)
-      //  req.body.task=updatedTask;     
-        
-    //}
-    //catch(error){
-      //  res.redirect('/')
-    //}       
 
-//})
 
 app.put('/edit-todo/:id', async (req, res) => {
     try {
@@ -108,14 +97,6 @@ app.put('/edit-todo/:id', async (req, res) => {
     }
 });
 
- 
-
-   // const { id } = req.params;
-    
-        
-
- 
-
 
 app.delete('/:id',async(req,res)=>{
     await Task.findByIdAndDelete(req.params.id)
@@ -124,5 +105,4 @@ app.delete('/:id',async(req,res)=>{
 
 
     
-
 app.listen(5009);
