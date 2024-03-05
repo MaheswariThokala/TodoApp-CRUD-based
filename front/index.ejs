@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Option 1: Include in HTML -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"
+    WXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>Todo</title>
+</head>
+
+<body>
+  <div class="contanier">
+    <div class="mt-5">
+      <h3 class="text-center">TODO😇</h3>
+    </div>
+
+    <!--<style>
+      /* Add custom CSS for list items */
+      .list-group-item {
+        border-bottom: 1px solid #dee2e6; /* Add a thin border line between list items */
+        
+    
+      }
+    </style>-->
+    <form action="/" method="post">
+      <div class="row justify-content-center">
+        <div class="mt-4">
+          <input type="text" placeholder="what to do" name="task">
+          <button type="submit" class="btn btn-success">ADD</button>
+        </div>
+      </div>
+    </form>
+
+
+    <div class="row justify-content-center">
+      <ul class="list-group mt-4">
+        <% todolist.forEach(tasks=> { %>
+         <li class="list-group-item py-2 px-3 border-top-2 border-bottom">
+          <div class="d-flex justify-content-between align-items-center">
+           
+      
+              <p>
+                <%= tasks.name %>
+              </p>
+              <div class="button">
+                <a href="/edit-todo/<%= tasks._id %>" class="btn btn-primary mr-2">
+                  <i class="bi bi-pencil-square"></i> Edit
+                </a>
+                <form action="/<%= tasks._id %>?_method=DELETE" method="post" style="display: inline;">
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+
+                <br>
+                <br>
+                
+                
+              </div>
+          
+          </li>
+
+          <% }); %>
+      </ul>
+    </div>
+
+
+
+</body>
+
+</html>

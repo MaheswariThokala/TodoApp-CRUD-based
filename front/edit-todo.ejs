@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+  <form action="/edit-todo/<%= task.id %>?_method=put" method="post"> 
+    <div class="row justify-content-center">  
+     <div class="mt-4">      
+       <input type="text" placeholder="what to do" name="name" value="<%= task.name %>">
+       <button type="submit" class="btn btn-success">Update</button>
+     </div>
+   </div>
+ </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
