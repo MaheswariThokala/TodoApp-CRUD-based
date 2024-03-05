@@ -49,8 +49,8 @@ This To-Do App is a simple web application built using Express.js, MongoDB, Node
 
 - `app.js`: Entry point of the application.
 - `routes/todoRoutes.js`: Defines routes for handling CRUD operations on tasks.
-- `models/todoModel.js`: Defines the schema and methods for interacting with the MongoDB collection.
-- `views/`: Contains HTML files for rendering UI.
+- `models/user.js`: Defines the schema and methods for interacting with the MongoDB collection.
+- `views(Front)/`: Contains HTML files for rendering UI.
 - `public/`: Contains static assets like CSS, JavaScript, and images.
 
 ## Contributing
