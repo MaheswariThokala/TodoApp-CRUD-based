@@ -76,7 +76,7 @@ app.post("/", async(req, res)=>{
     catch(error){
         res.redirect("/")
     }
-    
+});   
 
 
 app.put('/edit-todo/:id', async (req, res) => {
